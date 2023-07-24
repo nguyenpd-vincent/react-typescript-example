@@ -63,61 +63,63 @@ const NotFound: React.FC = () => {
   }
 
   return (
-    <div className='container'>
-      <div className='content'>
-        <div className='content_header'>
-          <div className='text_header'>
-            TOKYO RAMEN FINDER
+    <div className='ramen'>
+      <div className='container'>
+        <div className='content'>
+          <div className='content_header'>
+            <div className='text_header'>
+              TOKYO RAMEN FINDER
+            </div>
+            <img src={ramen} alt="ramen" />
           </div>
-          <img src={ramen} alt="ramen" />
+
+          <input
+            className='search_input'
+            type="text"
+            placeholder='Filter by speciality, location or keyword...'
+          />
+
+          <div className='display_top_result'>
+            <p>Displaying the top 12 of 2,500 results</p>
+          </div>
         </div>
 
-        <input
-          className='search_input'
-          type="text"
-          placeholder='Filter by speciality, location or keyword...'
-        />
+        <div className='cards'>
+          {
+            ramenProducts &&
+            ramenProducts?.results &&
+            ramenProducts?.results?.shop &&
+            ramenProducts?.results?.shop?.length &&
+            ramenProducts?.results?.shop?.map((v: any, idx: number) => (
+              <div className='card'>
+                <div className='box'>
+                  <div className='card_header'>
+                    <div className='text_header'>
+                      <div className='name_header'>{truncateText(v?.name, 10)}</div>
+                      <div className='address_header'>{truncateText(v?.address, 12)}</div>
+                    </div>
 
-        <div className='display_top_result'>
-          <p>Displaying the top 12 of 2,500 results</p>
-        </div>
-      </div>
+                    {
+                      chekcTopRamenSetIcon(idx)
+                    }
 
-      <div className='cards'>
-        {
-          ramenProducts &&
-          ramenProducts?.results &&
-          ramenProducts?.results?.shop &&
-          ramenProducts?.results?.shop?.length &&
-          ramenProducts?.results?.shop?.map((v: any, idx: number) => (
-            <div className='card'>
-              <div className='box'>
-                <div className='card_header'>
-                  <div className='text_header'>
-                    <div className='name_header'>{truncateText(v?.name, 10)}</div>
-                    <div className='address_header'>{truncateText(v?.address, 12)}</div>
                   </div>
-
-                  {
-                    chekcTopRamenSetIcon(idx)
-                  }
-
-                </div>
-                <div className='image_ramen'>
-                  <img src={v?.photo?.pc?.l} alt="image_ramen" />
-                </div>
-                <div className='description'>
-                  {truncateText(v?.shop_detail_memo, 35)}
-                </div>
-                <div className='button_find_more'>
-                  <button className='find_out_more'>
-                    Find Out More
-                  </button>
+                  <div className='image_ramen'>
+                    <img src={v?.photo?.pc?.l} alt="image_ramen" />
+                  </div>
+                  <div className='description'>
+                    {truncateText(v?.shop_detail_memo, 35)}
+                  </div>
+                  <div className='button_find_more'>
+                    <button className='find_out_more'>
+                      Find Out More
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
-        }
+            ))
+          }
+        </div>
       </div>
     </div>
   );

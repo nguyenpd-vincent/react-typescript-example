@@ -1,6 +1,12 @@
+.ramen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .container {
   background-color: #303030;
   padding: 24px;
+  width: 938.72px;
 }
 
 .content {
