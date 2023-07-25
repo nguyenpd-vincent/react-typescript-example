@@ -1,0 +1,50 @@
+/* .donut-spinner {
+  display: inline-block;
+  border: 3px solid currentColor;
+  border-left-color: transparent;
+  border-radius: 50%;
+  animation: rotate 1.2s linear infinite;
+} */
+/* .align-text-top {
+  vertical-align: text-top !important;
+} */
+/* === Keyframe Rotate === */
+
+@keyframes rotate {
+    0% {
+		transform: rotate(0deg);
+	}
+    100% {
+		transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes rotate {
+    0% {
+		-webkit-transform: rotate(0deg);
+	}
+    100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-moz-keyframes rotate {
+    0% {
+		-moz-transform: rotate(0deg);
+	}
+    100% {
+		-moz-transform: rotate(360deg);
+	}
+}
+
+@-o-keyframes rotate {
+    0% {
+		-o-transform: rotate(0deg);
+	}
+    100% {
+		-o-transform: rotate(360deg);
+	}
+}
+
+/* === Keyframe Shake === */
+

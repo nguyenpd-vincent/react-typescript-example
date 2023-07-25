@@ -1,0 +1,6 @@
+button[data-state="active"] {
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  border-bottom: none;
+  color: #333;
+}

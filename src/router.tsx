@@ -1,15 +1,13 @@
 import * as React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
-
 const NotFoundPage = React.lazy(() => import("./pages/NotFound"));
-const Home = React.lazy(() => import("./pages/Home"));
+
+const RamenPage = React.lazy(() => import("./pages/ramen"));
 
 const AppRouter = () => {
   return (
     <Routes>
-      <Route element={<Outlet />}>
-      <Route path="/" element={<Home />} />
-      </Route>
+      <Route path="/" element={<RamenPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
