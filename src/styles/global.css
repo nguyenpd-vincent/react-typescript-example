@@ -1,15 +1,3 @@
-/* .donut-spinner {
-  display: inline-block;
-  border: 3px solid currentColor;
-  border-left-color: transparent;
-  border-radius: 50%;
-  animation: rotate 1.2s linear infinite;
-} */
-/* .align-text-top {
-  vertical-align: text-top !important;
-} */
-/* === Keyframe Rotate === */
-
 @keyframes rotate {
     0% {
 		transform: rotate(0deg);
@@ -45,6 +33,3 @@
 		-o-transform: rotate(360deg);
 	}
 }
-
-/* === Keyframe Shake === */
-

@@ -99,7 +99,7 @@ function RamenProduct() {
             ramenProducts?.results?.shop &&
             ramenProducts?.results?.shop?.length &&
             ramenProducts?.results?.shop?.map((v: any, idx: number) => (
-              <div className='product__info'>
+              <div className='product__info' key={idx} >
                 <div className='product__info--item'>
                   <div className='product__info-heading'>
                     <div className='product__title--content'>
