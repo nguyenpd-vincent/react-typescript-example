@@ -9,7 +9,6 @@ const NotFound: React.FC = () => {
   const [ramenProducts, setRamenProducts] = useState<any>([]);
 
   useEffect(() => {
-    // Fetch the list of ramen products from the server using the service
     RamenProductService.fetchRamenProducts()
       .then((data) => setRamenProducts(data))
       .catch((error) => console.error('Error fetching data:', error));
@@ -63,40 +62,40 @@ const NotFound: React.FC = () => {
   }
 
   return (
-    <div className='ramen'>
-      <div className='container'>
-        <div className='content'>
-          <div className='content_header'>
-            <div className='text_header'>
+    <div className='container'>
+      <div className='product'>
+        <div className='product__ramen__deading'>
+          <div className='product__title'>
+            <div className='product__title--content'>
               TOKYO RAMEN FINDER
             </div>
             <img src={ramen} alt="ramen" />
           </div>
 
           <input
-            className='search_input'
+            className='product__search'
             type="text"
             placeholder='Filter by speciality, location or keyword...'
           />
 
-          <div className='display_top_result'>
+          <div className='product__top--result'>
             <p>Displaying the top 12 of 2,500 results</p>
           </div>
         </div>
 
-        <div className='cards'>
+        <div className='product__list'>
           {
             ramenProducts &&
             ramenProducts?.results &&
             ramenProducts?.results?.shop &&
             ramenProducts?.results?.shop?.length &&
             ramenProducts?.results?.shop?.map((v: any, idx: number) => (
-              <div className='card'>
-                <div className='box'>
-                  <div className='card_header'>
-                    <div className='text_header'>
-                      <div className='name_header'>{truncateText(v?.name, 10)}</div>
-                      <div className='address_header'>{truncateText(v?.address, 12)}</div>
+              <div className='product__info'>
+                <div className='product__info--item'>
+                  <div className='product__info-heading'>
+                    <div className='product__title--content'>
+                      <div className='product__info--name'>{truncateText(v?.name, 10)}</div>
+                      <div className='product__info--address'>{truncateText(v?.address, 12)}</div>
                     </div>
 
                     {
@@ -104,14 +103,14 @@ const NotFound: React.FC = () => {
                     }
 
                   </div>
-                  <div className='image_ramen'>
+                  <div className='product__info--image'>
                     <img src={v?.photo?.pc?.l} alt="image_ramen" />
                   </div>
-                  <div className='description'>
+                  <div className='product__info--description'>
                     {truncateText(v?.shop_detail_memo, 35)}
                   </div>
-                  <div className='button_find_more'>
-                    <button className='find_out_more'>
+                  <div className='product__info--button'>
+                    <button className='product__info--findmore'>
                       Find Out More
                     </button>
                   </div>

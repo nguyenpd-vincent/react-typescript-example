@@ -8,18 +8,9 @@ const AppRouter = () => {
   return (
     <Routes>
       <Route element={<Outlet />}>
-        <Route
-          path="/auth/login"
-          element={
-            <React.Suspense fallback={<>...</>}>
-              {/* <LoginPage /> */}
-            </React.Suspense>
-          }
-        />
+      <Route path="/" element={<Home />} />
       </Route>
-
-
-      <Route path="*" element={<Home />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };
