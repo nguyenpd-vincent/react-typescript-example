@@ -1,4 +1,6 @@
 export const apiConfig = {
-  baseUrl: import.meta.env.VITE_BASE_API,
-  keyAPI: import.meta.env.KEY_API || '329b6d29b7321768',
+  baseUrl:  '/api',
+  // baseUrl: process.env.VITE_BASE_API || '/api',
+  keyAPI:  '329b6d29b7321768',
+  // keyAPI: process.env.KEY_API || '329b6d29b7321768',
 };

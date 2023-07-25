@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { fetchRamenProducts } from "@/services/ramen";
+import React from "react";
+import { fetchRamenProducts } from "../../services/ramen";
 import "./Ramen.css";
-import ramen from '/ramen.png';
-import Star1 from '/Star1.png';
-import Star2 from '/Star2.png';
-import Star3 from '/Ellipse.png';
+import ramen from '../../assets/images/Star1.png';
+import Star1 from '../../assets/images/Star1.png';
+import Star2 from '../../assets/images/Star2.png';
+import Star3 from '../../assets/images/Ellipse.png';
 
 
 function RamenProduct() {
@@ -21,10 +22,10 @@ function RamenProduct() {
     fetchProducts();
   }, [searchQuery]);
 
-  const truncateText = (text: string, sub: number) => {
+
+  const truncateText = (text: string, sub: number): string => {
     return text.length > sub ? `${text.substring(0, sub)}...` : text;
   }
-
   const chekcTopRamenSetIcon = (top: number) => {
     if (top === 0) {
       return <>

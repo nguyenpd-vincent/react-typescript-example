@@ -14,7 +14,7 @@ export default defineConfig({
     proxy: {
       // string shorthand: http://localhost:5173/foo -> http://localhost:4567/foo
       '/api': {
-        target: 'https://webservice.recruit.co.jp/hotpepper/gourmet/v1',
+        target: 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
