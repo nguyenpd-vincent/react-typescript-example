@@ -1,10 +1,12 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import RamenProduct from './index';
-import { MemoryRouter } from "react-router-dom";
+import { render, screen } from "@testing-library/react";
+import RamenProduct from "./index";
 
-test('renders learn react link', () => {
+test("renders the title and search input", () => {
   render(<RamenProduct />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  
+  const titleElement = screen.getByText(/TOKYO RAMEN FINDER/i);
+  const searchInput = screen.getByPlaceholderText(/Filter by speciality, location or keyword.../i);
+  
+  expect(titleElement).toBeInTheDocument();
+  expect(searchInput).toBeInTheDocument();
 });
