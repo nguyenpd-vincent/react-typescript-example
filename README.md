@@ -21,7 +21,7 @@ $ yarn preview
 ```
 
 
-## : Run app with developer
+## Run app with developer
 
 ```bash
 # install packages:
