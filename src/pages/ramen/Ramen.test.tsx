@@ -1,10 +1,12 @@
-import { render, screen, waitFor, act} from "@testing-library/react";
+import { render, screen, act} from "@testing-library/react";
 
 import React from "react";
-import ReactDOM from "react-dom";
 import RamenProduct from "./index";
 import "@testing-library/jest-dom";
 import { fetchRamenProducts } from "../../services/ramen";
+// jest.mock("../../services/ramen", () => ({
+//   fetchRamenProducts: jest.fn(),
+// }));
 jest.mock("../../services/ramen");
 
 // Set up JSDOM with MutationObserver

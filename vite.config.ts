@@ -13,10 +13,12 @@ export default defineConfig({
   server: {
     proxy: {
       // string shorthand: http://localhost:5173/foo -> http://localhost:4567/foo
-      '/api': {
-        target: 'http://webservice.recruit.co.jp/hotpepper/gourmet/v1',
+      '/api-sv': {
+        target: 'https://webservice.recruit.co.jp/hotpepper/gourmet/v1',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        secure: false, 
+        bypass: (req, res) => { console.log(req, res)},
+        rewrite: (path) => path.replace(/^\/api-sv/, ''),
       },
     },
   },
