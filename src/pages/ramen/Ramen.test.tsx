@@ -1,15 +1,10 @@
 import { render, screen, act} from "@testing-library/react";
-
 import React from "react";
 import RamenProduct from "./index";
 import "@testing-library/jest-dom";
 import { fetchRamenProducts } from "../../services/ramen";
-// jest.mock("../../services/ramen", () => ({
-//   fetchRamenProducts: jest.fn(),
-// }));
-jest.mock("../../services/ramen");
 
-// Set up JSDOM with MutationObserver
+jest.mock("../../services/ramen");
 const { JSDOM } = require("jsdom");
 const dom = new JSDOM("<!doctype html><html><body></body></html>", {
   url: "http://localhost",

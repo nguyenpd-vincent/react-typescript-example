@@ -13,11 +13,6 @@ function RamenProduct() {
   const [searchQuery, setSearchQuery] = useState("");
   useEffect(() => {
     const fetchProducts = async () => {
-      // fetchRamenProducts(searchQuery)
-      // .then((data) => {
-      //   setRamenProducts(data.data)
-      // })
-      // .catch((error) => console.error('Error fetching data:', error));
       try {
         const data = await fetchRamenProducts(searchQuery);
         console.log('data :>> ', data);
