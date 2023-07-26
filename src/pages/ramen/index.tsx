@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { fetchRamenProducts } from "../../services/ramen";
 import "./Ramen.css";
-import ramen from '../../assets/images/Star1.png';
+import ramen from '../../assets/images/ramen.png';
 import Star1 from '../../assets/images/Star1.png';
 import Star2 from '../../assets/images/Star2.png';
 import Star3 from '../../assets/images/Ellipse.png';
