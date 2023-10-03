@@ -15,7 +15,7 @@ function RamenProduct() {
     const fetchProducts = async () => {
       try {
         const data = await fetchRamenProducts(searchQuery);
-        console.log('data :>> ', data);
+        // console.log('data :>> ', data);
         setRamenProducts(data?.data)
       } catch (error) {
          console.error('Error fetching data:', error);
